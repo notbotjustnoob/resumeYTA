@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Yassir Taher — Principal Structural Integrity Engineer with 6+ years in energy and offshore industries.">
+  <meta name="theme-color" content="#0b0a08">
+  <meta property="og:title" content="Yassir Taher — Engineering Leader">
+  <meta property="og:description" content="Principal Structural Integrity Engineer · Oil & Gas · Offshore · Energy Transition">
+  <title>Yassir Taher</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─── Reset & Variables ──────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #0b0a08;
+      --surface:    #121109;
+      --border:     #1f1d17;
+      --gold:       #C89B3C;
+      --gold-dim:   #7a5d22;
+      --gold-glow:  rgba(200,155,60,0.06);
+      --cream:      #EAE5D9;
+      --muted:      #52504a;
+      --text:       #ADAAA3;
+      --accent:     #4E8FA3;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.65;
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 2px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 2px; }
+
+    /* ─── Grain Overlay ───────────────────────────────────────────── */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9000;
+      opacity: 0.018;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 128px 128px;
+    }
+
+    /* ─── Custom Cursor ───────────────────────────────────────────── */
+    .cursor {
+      position: fixed;
+      width: 7px;
+      height: 7px;
+      background: var(--gold);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: opacity 0.3s;
+    }
+    .cursor-ring {
+      position: fixed;
+      width: 30px;
+      height: 30px;
+      border: 1px solid var(--gold-dim);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%, -50%);
+      transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+    }
+    @media (hover: none) {
+      .cursor, .cursor-ring { display: none; }
+      body { cursor: auto; }
+    }
+
+    /* ─── Side Navigation ─────────────────────────────────────────── */
+    .sidenav {
+      position: fixed;
+      right: 28px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-items: center;
+    }
+    .sidenav-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--muted);
+      cursor: pointer;
+      transition: all 0.4s ease;
+      position: relative;
+    }
+    .sidenav-dot:hover, .sidenav-dot.active {
+      background: var(--gold);
+      box-shadow: 0 0 10px var(--gold);
+      transform: scale(1.8);
+    }
+    .sidenav-dot::after {
+      content: attr(data-label);
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'DM Mono', monospace;
+      font-size: 8px;
+      letter-spacing: 0.12em;
+      color: var(--text);
+      white-space: nowrap;
+      background: var(--surface);
+      padding: 3px 8px;
+      border: 1px solid var(--border);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      pointer-events: none;
+    }
+    .sidenav-dot:hover::after { opacity: 1; }
+    @media (max-width: 768px) { .sidenav { display: none; } }
+
+    /* ─── Hero ───────────────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 10vh 10vw 12vh;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg-line {
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .hero-bg-line::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: 5%;
+      width: 1px;
+      height: 140%;
+      background: linear-gradient(to bottom, transparent, var(--border), transparent);
+      transform: rotate(12deg);
+    }
+    .hero-bg-line::after {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: 22%;
+      width: 1px;
+      height: 140%;
+      background: linear-gradient(to bottom, transparent, var(--border) 40%, transparent);
+      transform: rotate(12deg);
+    }
+    .hero-glow {
+      position: absolute;
+      bottom: -20%;
+      left: -10%;
+      width: 70vw;
+      height: 60vh;
+      background: radial-gradient(ellipse, rgba(200,155,60,0.035) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 36px;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.3s forwards;
+    }
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(64px, 10vw, 148px);
+      font-weight: 300;
+      line-height: 0.88;
+      color: var(--cream);
+      letter-spacing: -0.02em;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.5s forwards;
+    }
+    .hero-name em {
+      font-style: italic;
+      color: var(--gold);
+      display: block;
+    }
+    .hero-title {
+      margin-top: 28px;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.8s forwards;
+    }
+    .hero-rule {
+      width: 0;
+      height: 1px;
+      background: linear-gradient(to right, var(--gold), transparent);
+      margin: 28px 0;
+      opacity: 0;
+      animation: expandLine 0.9s ease 1s forwards;
+    }
+    .hero-contact {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 1.2s forwards;
+    }
+    .hero-contact a {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      transition: color 0.3s ease;
+      cursor: none;
+    }
+    .hero-contact a:hover { color: var(--gold); }
+    .hero-scroll-hint {
+      position: absolute;
+      bottom: 36px;
+      right: 10vw;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 1.6s forwards;
+    }
+    .hero-scroll-hint span {
+      font-family: 'DM Mono', monospace;
+      font-size: 8px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .scroll-arrow {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--muted), transparent);
+      position: relative;
+      overflow: hidden;
+    }
+    .scroll-arrow::after {
+      content: '';
+      position: absolute;
+      top: -100%;
+      left: 0;
+      width: 1px;
+      height: 100%;
+      background: var(--gold);
+      animation: scrollFlow 2s ease-in-out 1.8s infinite;
+    }
+
+    /* ─── Main Layout ─────────────────────────────────────────────── */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 8vw 120px;
+    }
+
+    /* ─── Summary ─────────────────────────────────────────────────── */
+    .summary-block {
+      padding: 80px 0 70px;
+      border-bottom: 1px solid var(--border);
+    }
+    .summary-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 8px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: 24px;
+    }
+    .summary-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(19px, 2.4vw, 28px);
+      font-weight: 300;
+      line-height: 1.45;
+      color: var(--cream);
+      max-width: 680px;
+    }
+    .summary-text em { font-style: italic; color: var(--gold); }
+
+    /* ─── Section ─────────────────────────────────────────────────── */
+    .cv-section {
+      border-bottom: 1px solid var(--border);
+      padding: 56px 0;
+    }
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .section-header:hover .section-title { color: var(--cream); }
+    .section-num {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      color: var(--gold-dim);
+      letter-spacing: 0.15em;
+      flex-shrink: 0;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(30px, 4.5vw, 52px);
+      font-weight: 300;
+      color: #857f73;
+      letter-spacing: -0.01em;
+      flex: 1;
+      transition: color 0.3s ease;
+    }
+    .cv-section.open .section-title { color: var(--cream); }
+    .toggle-btn {
+      width: 28px;
+      height: 28px;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .cv-section.open .toggle-btn {
+      border-color: var(--gold-dim);
+      background: rgba(200,155,60,0.06);
+    }
+    .toggle-btn svg { transition: transform 0.4s ease; stroke: var(--gold-dim); }
+    .cv-section.open .toggle-btn svg { transform: rotate(45deg); stroke: var(--gold); }
+
+    /* ─── Cards Container ─────────────────────────────────────────── */
+    .cards-wrap {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .cards-list {
+      padding-top: 28px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ─── Card ────────────────────────────────────────────────────── */
+    .card {
+      border: 1px solid var(--border);
+      border-top: none;
+      cursor: pointer;
+      transition: background 0.3s ease, border-color 0.3s ease;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.45s ease, transform 0.45s ease,
+                  background 0.3s ease, border-color 0.3s ease;
+    }
+    .card:first-child { border-top: 1px solid var(--border); }
+    .card.in { opacity: 1; transform: translateY(0); }
+    .card:hover { background: rgba(255,255,255,0.018); border-color: #2e2b22; }
+    .card.open {
+      background: var(--gold-glow);
+      border-color: var(--gold-dim);
+    }
+    .card-head {
+      padding: 22px 26px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
+    }
+    .card-role {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--cream);
+      letter-spacing: 0.01em;
+      margin-bottom: 4px;
+    }
+    .card-org {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--gold);
+    }
+    .card-meta {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .card-date, .card-loc {
+      font-family: 'DM Mono', monospace;
+      font-size: 8px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .plus-icon {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .plus-icon line {
+      stroke: var(--muted);
+      transition: opacity 0.3s, transform 0.3s;
+      transform-origin: center;
+      transform-box: fill-box;
+    }
+    .card.open .plus-icon .v-line {
+      opacity: 0;
+      transform: scaleY(0);
+    }
+    .card.open .plus-icon line { stroke: var(--gold); }
+
+    /* ─── Card Body ───────────────────────────────────────────────── */
+    .card-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-inner {
+      padding: 4px 26px 26px;
+      border-top: 1px solid var(--border);
+    }
+    .card-summary {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-style: italic;
+      color: var(--muted);
+      padding: 14px 0 18px;
+      line-height: 1.5;
+    }
+    .card-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+    .card-bullets li {
+      font-size: 12.5px;
+      color: var(--text);
+      line-height: 1.65;
+      padding-left: 18px;
+      position: relative;
+    }
+    .card-bullets li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--gold-dim);
+    }
+    .impact-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      margin-top: 20px;
+      border: 1px solid var(--border);
+    }
+    .impact-cell {
+      background: var(--bg);
+      padding: 14px 16px;
+    }
+    .impact-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 7.5px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: 5px;
+    }
+    .impact-value {
+      font-size: 12px;
+      color: var(--text);
+      line-height: 1.4;
+    }
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 18px;
+    }
+    .tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 8px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      border: 1px solid var(--border);
+      padding: 3px 8px;
+    }
+
+    /* ─── Skills ─────────────────────────────────────────────────── */
+    .skills-wrap {
+      padding-top: 28px;
+    }
+    .skill-group { margin-bottom: 30px; }
+    .skill-group-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 8px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .skills-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+    .skill-pill {
+      font-size: 11.5px;
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 4px 12px;
+      transition: all 0.25s ease;
+    }
+    .skill-pill:hover {
+      border-color: var(--gold-dim);
+      color: var(--cream);
+      background: var(--gold-glow);
+    }
+    .lang-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .lang-row:last-child { border-bottom: none; }
+    .lang-name { font-size: 12.5px; color: var(--cream); }
+    .lang-level {
+      font-family: 'DM Mono', monospace;
+      font-size: 8px;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+    }
+
+    /* ─── Footer ─────────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 36px 8vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px;
+      font-style: italic;
+      color: var(--muted);
+    }
+    .footer-note {
+      font-family: 'DM Mono', monospace;
+      font-size: 8px;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+    }
+
+    /* ─── Reveal ─────────────────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    /* ─── Keyframes ──────────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes expandLine {
+      from { width: 0; opacity: 0; }
+      to   { width: 80px; opacity: 1; }
+    }
+    @keyframes scrollFlow {
+      0%   { top: -100%; opacity: 1; }
+      80%  { opacity: 1; }
+      100% { top: 110%; opacity: 0; }
+    }
+
+    /* ─── Mobile ─────────────────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .hero { padding: 10vh 6vw 14vh; }
+      main  { padding: 0 6vw 80px; }
+      footer { padding: 30px 6vw; }
+      .hero-contact { gap: 16px; }
+      .card-head { grid-template-columns: 1fr; gap: 8px; }
+      .card-meta { text-align: left; }
+      .impact-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cur"></div>
+  <div class="cursor-ring" id="curR"></div>
+
+  <!-- Side Nav -->
+  <nav class="sidenav" aria-label="Page sections">
+    <div class="sidenav-dot active" data-target="hero"     data-label="Intro"></div>
+    <div class="sidenav-dot"        data-target="summary"  data-label="About"></div>
+    <div class="sidenav-dot"        data-target="sec-exp"  data-label="Experience"></div>
+    <div class="sidenav-dot"        data-target="sec-proj" data-label="Projects"></div>
+    <div class="sidenav-dot"        data-target="sec-edu"  data-label="Education"></div>
+    <div class="sidenav-dot"        data-target="sec-skl"  data-label="Skills"></div>
+    <div class="sidenav-dot"        data-target="sec-trn"  data-label="Training"></div>
+  </nav>
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-line" aria-hidden="true"></div>
+    <div class="hero-glow" aria-hidden="true"></div>
+
+    <div class="hero-label">Structural Integrity · Oil &amp; Gas · Offshore · Energy Transition</div>
+    <h1 class="hero-name">
+      Yassir
+      <em>Taher</em>
+    </h1>
+    <p class="hero-title">Principal Structural Integrity Engineer &amp; ECA Lead · Saipem</p>
+    <div class="hero-rule"></div>
+    <div class="hero-contact">
+      <a href="mailto:yassir.taher@outlook.com">yassir.taher@outlook.com</a>
+      <a href="tel:+33617169092">(+33) 617 16 90 92</a>
+      <a href="https://linkedin.com/in/taheryassir" target="_blank" rel="noopener">linkedin.com/in/taheryassir</a>
+    </div>
+
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ MAIN ═══════════════ -->
+  <main>
+
+    <!-- Summary -->
+    <div class="summary-block reveal" id="summary">
+      <div class="summary-eyebrow">Profile</div>
+      <p class="summary-text">
+        Six years shaping the structural integrity of the world's most critical energy infrastructure —
+        from deepwater pipelines off the coast of Angola to pre-salt FPSO systems in Brazil.
+        A technical leader who <em>bridges rigorous engineering with strategic business impact</em>,
+        driving cost reduction, operational reliability, and long-term client partnerships across four continents.
+      </p>
+    </div>
+
+    <!-- ── EXPERIENCE ── -->
+    <section class="cv-section reveal" id="sec-exp">
+      <div class="section-header" role="button" tabindex="0" aria-expanded="false">
+        <span class="section-num">01</span>
+        <h2 class="section-title">Experience</h2>
+        <div class="toggle-btn" aria-hidden="true">
+          <svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke-width="1.2">
+            <line x1="5.5" y1="0" x2="5.5" y2="11"/>
+            <line x1="0" y1="5.5" x2="11" y2="5.5"/>
+          </svg>
+        </div>
+      </div>
+      <div class="cards-wrap">
+        <div class="cards-list">
+
+          <!-- Card: Principal Engineer -->
+          <div class="card" role="button" tabindex="0">
+            <div class="card-head">
+              <div>
+                <div class="card-role">Principal Structural Integrity Engineer · ECA Lead</div>
+                <div class="card-org">Saipem</div>
+              </div>
+              <div class="card-meta">
+                <div class="card-date">Sep 2018 — Present</div>
+                <div class="card-loc">Montigny-Le-Bretonneux, France</div>
+                <svg class="plus-icon" viewBox="0 0 14 14" fill="none" stroke-width="1.2">
+                  <line x1="7" y1="0" x2="7" y2="14" class="v-line"/>
+                  <line x1="0" y1="7" x2="14" y2="7"/>
+                </svg>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-inner">
+                <p class="card-summary">
+                  Leading high-stakes Engineering Critical Assessments across deepwater infrastructure
+                  for Shell, ENI, Petrobras, ExxonMobil and TotalEnergies — across four continents.
+                </p>
+                <ul class="card-bullets">
+                  <li>Lead and manage ECA project teams and resources, ensuring technical excellence and deadline compliance across concurrent projects.</li>
+                  <li>Develop innovative calculation methodologies grounded in industry standards (BS7910, DNV) and state-of-the-art fracture mechanics research.</li>
+                  <li>Define optimal weld acceptance criteria by balancing installation constraints with structural reliability — directly reducing repair rates offshore.</li>
+                  <li>Collaborate with senior executives and client representatives to align engineering solutions with strategic project objectives.</li>
+                  <li>Drive significant financial savings by minimising mechanical testing requirements through intelligent, evidence-based acceptance criteria design.</li>
+                  <li>Enhance team productivity through process automation (Python), workflow optimisation and custom internal tooling.</li>
+                </ul>
+                <div class="impact-row">
+                  <div class="impact-cell">
+                    <div class="impact-label">Operational Impact</div>
+                    <div class="impact-value">Reduced offshore repair rates & enhanced structural reliability</div>
+                  </div>
+                  <div class="impact-cell">
+                    <div class="impact-label">Cost Reduction</div>
+                    <div class="impact-value">Minimised testing & repair costs through smart acceptance criteria</div>
+                  </div>
+                  <div class="impact-cell">
+                    <div class="impact-label">Client Partnerships</div>
+                    <div class="impact-value">Long-term relationships with Petrobras, ENI, Shell, ExxonMobil</div>
+                  </div>
+                </div>
+                <div class="card-tags">
+                  <span class="tag">ECA</span>
+                  <span class="tag">Fracture Mechanics</span>
+                  <span class="tag">Pipeline Integrity</span>
+                  <span class="tag">Technical Leadership</span>
+                  <span class="tag">Python Automation</span>
+                  <span class="tag">Client Management</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card: Offshore -->
+          <div class="card" role="button" tabindex="0">
+            <div class="card-head">
+              <div>
+                <div class="card-role">Installation Methods Engineer — Offshore Assignment</div>
+                <div class="card-org">Saipem · FDS Installation Vessel</div>
+              </div>
+              <div class="card-meta">
+                <div class="card-date">Jul — Aug 2023</div>
+                <div class="card-loc">Brazil (Offshore)</div>
+                <svg class="plus-icon" viewBox="0 0 14 14" fill="none" stroke-width="1.2">
+                  <line x1="7" y1="0" x2="7" y2="14" class="v-line"/>
+                  <line x1="0" y1="7" x2="14" y2="7"/>
+                </svg>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-inner">
+                <p class="card-summary">
+                  Deployed offshore on one of the world's largest pipelaying vessels during the Buzios 5 campaign —
+                  bridging engineering theory with live installation operations at sea.
+                </p>
+                <ul class="card-bullets">
+                  <li>Oversaw the implementation of methods for pipelaying, subsea structures, and equipment installation during active offshore operations.</li>
+                  <li>Worked alongside vessel engineers, technicians, and Petrobras representatives to ensure procedural alignment.</li>
+                  <li>Provided safe, efficient, and cost-effective engineering solutions in response to unexpected operational events — under real pressure.</li>
+                  <li>Delivered real-time technical troubleshooting and site query support.</li>
+                </ul>
+                <div class="card-tags">
+                  <span class="tag">Offshore Operations</span>
+                  <span class="tag">Pipelaying</span>
+                  <span class="tag">Subsea Installation</span>
+                  <span class="tag">Crisis Resolution</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card: Intern -->
+          <div class="card" role="button" tabindex="0">
+            <div class="card-head">
+              <div>
+                <div class="card-role">Structural Integrity Engineer — Research Intern</div>
+                <div class="card-org">Saipem</div>
+              </div>
+              <div class="card-meta">
+                <div class="card-date">Mar — Aug 2018</div>
+                <div class="card-loc">France</div>
+                <svg class="plus-icon" viewBox="0 0 14 14" fill="none" stroke-width="1.2">
+                  <line x1="7" y1="0" x2="7" y2="14" class="v-line"/>
+                  <line x1="0" y1="7" x2="14" y2="7"/>
+                </svg>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-inner">
+                <p class="card-summary">
+                  Master's thesis project: pioneering a constitutive model identification methodology
+                  for FE-based fracture mechanics assessments of carbon steel pipelines.
+                </p>
+                <ul class="card-bullets">
+                  <li>Identified material constitutive models for FE-based fracture mechanics assessments of API X65 carbon steel.</li>
+                  <li>Comparative analysis of numerical optimisation methods and material models.</li>
+                  <li>Developed Abaqus models using Python scripting for automated tensile test simulation.</li>
+                  <li>Applied the model to SEN(T) specimens — directly feeding into production ECA workflows used today.</li>
+                </ul>
+                <div class="card-tags">
+                  <span class="tag">FEA / Abaqus</span>
+                  <span class="tag">Python</span>
+                  <span class="tag">Material Science</span>
+                  <span class="tag">Research</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /cards-list -->
+      </div><!-- /cards-wrap -->
+    </section>
+
+    <!-- ── PROJECTS ── -->
+    <section class="cv-section reveal" id="sec-proj">
+      <div class="section-header" role="button" tabindex="0" aria-expanded="false">
+        <span class="section-num">02</span>
+        <h2 class="section-title">Projects</h2>
+        <div class="toggle-btn" aria-hidden="true">
+          <svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke-width="1.2">
+            <line x1="5.5" y1="0" x2="5.5" y2="11"/>
+            <line x1="0" y1="5.5" x2="11" y2="5.5"/>
+          </svg>
+        </div>
+      </div>
+      <div class="cards-wrap">
+        <div class="cards-list">
+
+          <div class="card" role="button" tabindex="0">
+            <div class="card-head">
+              <div>
+                <div class="card-role">Structural Integrity Lead</div>
+                <div class="card-org">Bonga North · Shell · Nigeria</div>
+              </div>
+              <div class="card-meta">
+                <div class="card-date">Oct 2024 — Present</div>
+                <svg class="plus-icon" viewBox="0 0 14 14" fill="none" stroke-width="1.2">
+                  <line x1="7" y1="0" x2="7" y2="14" class="v-line"/>
+                  <line x1="0" y1="7" x2="14" y2="7"/>
+                </svg>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-inner">
+                <p class="card-summary">Leading structural integrity scope for Shell's Bonga North deepwater development — one of the most technically complex FPSO tiebacks in West Africa, in water depths exceeding 1,000m.</p>
+                <div class="card-tags"><span class="tag">Shell</span><span class="tag">FPSO Tieback</span><span class="tag">West Africa</span><span class="tag">Deepwater</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" role="button" tabindex="0">
+            <div class="card-head">
+              <div>
+                <div class="card-role">Structural Integrity Lead</div>
+                <div class="card-org">Agogo Full Field Development · ENI · Angola</div>
+              </div>
+              <div class="card-meta">
+                <div class="card-date">Sep 2023 — Present</div>
+                <svg class="plus-icon" viewBox="0 0 14 14" fill="none" stroke-width="1.2">
+                  <line x1="7" y1="0" x2="7" y2="14" class="v-line"/>
+                  <line x1="0" y1="7" x2="14" y2="7"/>
+                </svg>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-inner">
+                <p class="card-summary">Full-field development scope for ENI Angola — defining structural integrity strategy across all pipeline and riser systems for one of Angola's major deepwater developments.</p>
+                <div class="card-tags"><span class="tag">ENI</span><span class="tag">Angola</span><span class="tag">Full Field Dev.</span><span class="tag">Risers & Pipelines</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" role="button" tabindex="0">
+            <div class="card-head">
+              <div>
+                <div class="card-role">Structural Integrity Lead</div>
+                <div class="card-org">Recif Project · ADEME · France</div>
+              </div>
+              <div class="card-meta">
+                <div class="card-date">Nov 2022 — Present</div>
+                <svg class="plus-icon" viewBox="0 0 14 14" fill="none" stroke-width="1.2">
+                  <line x1="7" y1="0" x2="7" y2="14" class="v-line"/>
+                  <line x1="0" y1="7" x2="14" y2="7"/>
+                </svg>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-inner">
+                <p class="card-summary">French energy transition project under ADEME — applying offshore structural integrity expertise to new energy infrastructure, contributing directly to France's renewable energy transition strategy.</p>
+                <div class="card-tags"><span class="tag">ADEME</span><span class="tag">Energy Transition</span><span class="tag">France</span><span class="tag">Renewables</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" role="button" tabindex="0">
+            <div class="card-head">
+              <div>
+                <div class="card-role">Structural Integrity Lead</div>
+                <div class="card-org">Buzios 7 · Petrobras · Brazil</div>
+              </div>
+              <div class="card-meta">
+                <div class="card-date">May 2022 — Present</div>
+                <svg class="plus-icon" viewBox="0 0 14 14" fill="none" stroke-width="1.2">
+                  <line x1="7" y1="0" x2="7" y2="14" class="v-line"/>
+                  <line x1="0" y1="7" x2="14" y2="7"/>
+                </svg>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-inner">
+                <p class="card-summary">Structural integrity leadership for Petrobras' Buzios 7 FPSO — continuing a multi-year partnership in the world's largest deepwater pre-salt field, operating at depths beyond 2,000m.</p>
+                <div class="card-tags"><span class="tag">Petrobras</span><span class="tag">Pre-salt</span><span class="tag">Brazil</span><span class="tag">Ultra-deepwater</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" role="button" tabindex="0">
+            <div class="card-head">
+              <div>
+                <div class="card-role">Structural Integrity Lead</div>
+                <div class="card-org">Buzios 5 · Petrobras · Brazil</div>
+              </div>
+              <div class="card-meta">
+                <div class="card-date">Sep 2020 — Nov 2023</div>
+                <svg class="plus-icon" viewBox="0 0 14 14" fill="none" stroke-width="1.2">
+                  <line x1="7" y1="0" x2="7" y2="14" class="v-line"/>
+                  <line x1="0" y1="7" x2="14" y2="7"/>
+                </svg>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-inner">
+                <p class="card-summary">Three-year structural integrity leadership on the Buzios 5 FPSO project — from initial engineering through to offshore installation, including the 2023 vessel deployment on the FDS.</p>
+                <div class="card-tags"><span class="tag">Petrobras</span><span class="tag">FPSO</span><span class="tag">Pre-salt</span><span class="tag">Multi-year</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" role="button" tabindex="0">
+            <div class="card-head">
+              <div>
+                <div class="card-role">Structural Integrity Engineer</div>
+                <div class="card-org">Liza Phase 1 · ExxonMobil · Guyana</div>
+              </div>
+              <div class="card-meta">
+                <div class="card-date">Jan — Sep 2019</div>
+                <svg class="plus-icon" viewBox="0 0 14 14" fill="none" stroke-width="1.2">
+                  <line x1="7" y1="0" x2="7" y2="14" class="v-line"/>
+                  <line x1="0" y1="7" x2="14" y2="7"/>
+                </svg>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-inner">
+                <p class="card-summary">Structural integrity engineering for ExxonMobil's landmark Liza Phase 1 — the first major deepwater oil development in Guyana, opening a new deepwater province for a country.</p>
+                <div class="card-tags"><span class="tag">ExxonMobil</span><span class="tag">Guyana</span><span class="tag">Deepwater</span><span class="tag">FPSO</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" role="button" tabindex="0">
+            <div class="card-head">
+              <div>
+                <div class="card-role">Structural Integrity Engineer</div>
+                <div class="card-org">ALEN · Noble Energy · Equatorial Guinea &amp; Kaombo Investigation · TotalEnergies</div>
+              </div>
+              <div class="card-meta">
+                <div class="card-date">Sep 2019 — Dec 2020</div>
+                <svg class="plus-icon" viewBox="0 0 14 14" fill="none" stroke-width="1.2">
+                  <line x1="7" y1="0" x2="7" y2="14" class="v-line"/>
+                  <line x1="0" y1="7" x2="14" y2="7"/>
+                </svg>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-inner">
+                <p class="card-summary">Concurrent structural integrity contributions to Noble Energy's ALEN project off Equatorial Guinea, and a technical investigation into subsea pipeline integrity for TotalEnergies' Kaombo development in Angola.</p>
+                <div class="card-tags"><span class="tag">Noble Energy</span><span class="tag">TotalEnergies</span><span class="tag">West Africa</span><span class="tag">Investigation</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── EDUCATION ── -->
+    <section class="cv-section reveal" id="sec-edu">
+      <div class="section-header" role="button" tabindex="0" aria-expanded="false">
+        <span class="section-num">03</span>
+        <h2 class="section-title">Education</h2>
+        <div class="toggle-btn" aria-hidden="true">
+          <svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke-width="1.2">
+            <line x1="5.5" y1="0" x2="5.5" y2="11"/>
+            <line x1="0" y1="5.5" x2="11" y2="5.5"/>
+          </svg>
+        </div>
+      </div>
+      <div class="cards-wrap">
+        <div class="cards-list">
+
+          <div class="card" role="button" tabindex="0">
+            <div class="card-head">
+              <div>
+                <div class="card-role">Master of Research — Mechanics, Materials, Structures &amp; Processes</div>
+                <div class="card-org">Arts et Métiers Institute of Technology</div>
+              </div>
+              <div class="card-meta">
+                <div class="card-date">Graduated 2018</div>
+                <div class="card-loc">Metz, France</div>
+                <svg class="plus-icon" viewBox="0 0 14 14" fill="none" stroke-width="1.2">
+                  <line x1="7" y1="0" x2="7" y2="14" class="v-line"/>
+                  <line x1="0" y1="7" x2="14" y2="7"/>
+                </svg>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-inner">
+                <p class="card-summary">Research master's degree at one of France's most prestigious engineering institutions, with a thesis directly applied to industrial pipeline integrity.</p>
+                <ul class="card-bullets">
+                  <li>Thesis: "Identification of carbon steel constitutive behavior for applications in fracture mechanics."</li>
+                  <li>Coursework: Fracture, Fatigue, Non-linear mechanics, Finite Elements, Composites, Thermomechanics, Multiscale mechanics, Continuum damage mechanics.</li>
+                </ul>
+                <div class="card-tags"><span class="tag">Grande École</span><span class="tag">Research</span><span class="tag">Fracture Mechanics</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" role="button" tabindex="0">
+            <div class="card-head">
+              <div>
+                <div class="card-role">Engineering Degree — Mechanical Engineering</div>
+                <div class="card-org">École Nationale Supérieure d'Arts et Métiers</div>
+              </div>
+              <div class="card-meta">
+                <div class="card-date">Graduated 2018</div>
+                <div class="card-loc">Meknès, Morocco</div>
+                <svg class="plus-icon" viewBox="0 0 14 14" fill="none" stroke-width="1.2">
+                  <line x1="7" y1="0" x2="7" y2="14" class="v-line"/>
+                  <line x1="0" y1="7" x2="14" y2="7"/>
+                </svg>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-inner">
+                <p class="card-summary">French grande école engineering degree in mechanical engineering — the dual French-Moroccan ENSAM system, equivalent to a top-tier European engineering MSc.</p>
+                <ul class="card-bullets">
+                  <li>Coursework: Machine elements design, CAD (CATIA, AutoCAD), Fabrication processes, Finite Elements, Mechanical design, Maintenance engineering.</li>
+                </ul>
+                <div class="card-tags"><span class="tag">Grande École</span><span class="tag">Mechanical Engineering</span><span class="tag">CAD & FEA</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SKILLS ── -->
+    <section class="cv-section reveal" id="sec-skl">
+      <div class="section-header" role="button" tabindex="0" aria-expanded="false">
+        <span class="section-num">04</span>
+        <h2 class="section-title">Skills</h2>
+        <div class="toggle-btn" aria-hidden="true">
+          <svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke-width="1.2">
+            <line x1="5.5" y1="0" x2="5.5" y2="11"/>
+            <line x1="0" y1="5.5" x2="11" y2="5.5"/>
+          </svg>
+        </div>
+      </div>
+      <div class="cards-wrap">
+        <div class="skills-wrap">
+
+          <div class="skill-group">
+            <div class="skill-group-label">Core Engineering Expertise</div>
+            <div class="skills-flex">
+              <span class="skill-pill">Engineering Critical Assessment</span>
+              <span class="skill-pill">Fracture Mechanics & Fatigue</span>
+              <span class="skill-pill">Welding & NDT</span>
+              <span class="skill-pill">Materials Engineering</span>
+              <span class="skill-pill">Mechanical Design</span>
+              <span class="skill-pill">FE Modelling (Abaqus)</span>
+              <span class="skill-pill">Hydrogen & CO₂ Transport</span>
+              <span class="skill-pill">Carbon Capture & Storage</span>
+              <span class="skill-pill">Offshore Installation</span>
+              <span class="skill-pill">Subsea Production Systems</span>
+              <span class="skill-pill">Statistics & Reliability Engineering</span>
+              <span class="skill-pill">Numerical Optimisation</span>
+              <span class="skill-pill">Project Management</span>
+              <span class="skill-pill">Technical Writing</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-label">Business & Strategy</div>
+            <div class="skills-flex">
+              <span class="skill-pill">Accounting & Finance</span>
+              <span class="skill-pill">Strategic Management</span>
+              <span class="skill-pill">Mergers & Acquisitions</span>
+              <span class="skill-pill">Marketing</span>
+              <span class="skill-pill">Data-Driven Decision Making</span>
+              <span class="skill-pill">Oil & Gas Markets</span>
+              <span class="skill-pill">Energy Transition Modelling</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-label">Data & Technology</div>
+            <div class="skills-flex">
+              <span class="skill-pill">Python</span>
+              <span class="skill-pill">JavaScript</span>
+              <span class="skill-pill">C / MATLAB</span>
+              <span class="skill-pill">Linux Shell</span>
+              <span class="skill-pill">Machine Learning & AI</span>
+              <span class="skill-pill">Data Visualisation</span>
+              <span class="skill-pill">Django / Vue.js</span>
+              <span class="skill-pill">CPU / GPU Parallelisation</span>
+              <span class="skill-pill">Version Control</span>
+              <span class="skill-pill">Power BI</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-label">Languages</div>
+            <div class="lang-row"><span class="lang-name">French</span><span class="lang-level">Bilingual</span></div>
+            <div class="lang-row"><span class="lang-name">Arabic</span><span class="lang-level">Bilingual</span></div>
+            <div class="lang-row"><span class="lang-name">English</span><span class="lang-level">Fluent</span></div>
+          </div>
+
+        </div><!-- /skills-wrap -->
+      </div><!-- /cards-wrap -->
+    </section>
+
+    <!-- ── TRAINING ── -->
+    <section class="cv-section reveal" id="sec-trn">
+      <div class="section-header" role="button" tabindex="0" aria-expanded="false">
+        <span class="section-num">05</span>
+        <h2 class="section-title">Training &amp; Certifications</h2>
+        <div class="toggle-btn" aria-hidden="true">
+          <svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke-width="1.2">
+            <line x1="5.5" y1="0" x2="5.5" y2="11"/>
+            <line x1="0" y1="5.5" x2="11" y2="5.5"/>
+          </svg>
+        </div>
+      </div>
+      <div class="cards-wrap">
+        <div class="cards-list">
+
+          <div class="card" role="button" tabindex="0">
+            <div class="card-head">
+              <div>
+                <div class="card-role">Business Studies — Self-directed Curriculum</div>
+                <div class="card-org">Coursera · Multiple Institutions</div>
+              </div>
+              <div class="card-meta">
+                <div class="card-date">Ongoing</div>
+                <svg class="plus-icon" viewBox="0 0 14 14" fill="none" stroke-width="1.2">
+                  <line x1="7" y1="0" x2="7" y2="14" class="v-line"/>
+                  <line x1="0" y1="7" x2="14" y2="7"/>
+                </svg>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-inner">
+                <p class="card-summary">A structured, intentional programme bridging deep engineering expertise with executive-level business acumen — laying the foundation for an MBA and a broader leadership role.</p>
+                <ul class="card-bullets">
+                  <li>Oil & Gas Industry Operations and Markets</li>
+                  <li>Modelling and Measuring the Energy Transition</li>
+                  <li>Business Foundations Specialisation</li>
+                  <li>Strategic Management</li>
+                  <li>Financial Management Specialisation</li>
+                  <li>Mergers and Acquisitions</li>
+                  <li>Climate Change: Carbon Capture and Storage</li>
+                </ul>
+                <div class="card-tags"><span class="tag">Business</span><span class="tag">Finance</span><span class="tag">Strategy</span><span class="tag">M&A</span><span class="tag">Energy Transition</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" role="button" tabindex="0">
+            <div class="card-head">
+              <div>
+                <div class="card-role">BOSIET — Basic Offshore Safety Induction & Emergency Training</div>
+                <div class="card-org">OPITO · FMTC</div>
+              </div>
+              <div class="card-meta">
+                <div class="card-date">May 2023</div>
+                <div class="card-loc">Dunkirk, France</div>
+                <svg class="plus-icon" viewBox="0 0 14 14" fill="none" stroke-width="1.2">
+                  <line x1="7" y1="0" x2="7" y2="14" class="v-line"/>
+                  <line x1="0" y1="7" x2="14" y2="7"/>
+                </svg>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-inner">
+                <p class="card-summary">Industry-standard offshore safety certification, prerequisite for working on offshore installations and vessels worldwide. Certified in real emergency procedures.</p>
+                <ul class="card-bullets">
+                  <li>Sea survival & raft deployment</li>
+                  <li>Helicopter underwater escape (HUET)</li>
+                  <li>First aid & emergency response</li>
+                  <li>Firefighting & smoke environments</li>
+                  <li>Compressed Air Emergency Breathing Systems (CA-EBS)</li>
+                </ul>
+                <div class="card-tags"><span class="tag">OPITO</span><span class="tag">Offshore Certified</span><span class="tag">Safety</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <span class="footer-name">Yassir Taher</span>
+    <span class="footer-note">Built for impact · 2025</span>
+  </footer>
+
+  <!-- ═══════════════ JAVASCRIPT ═══════════════ -->
+  <script>
+  (() => {
+    'use strict';
+
+    /* ── Custom Cursor ── */
+    const cur  = document.getElementById('cur');
+    const curR = document.getElementById('curR');
+    let mx = -100, my = -100, rx = -100, ry = -100;
+
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      cur.style.left = mx + 'px';
+      cur.style.top  = my + 'px';
+    });
+
+    (function tick() {
+      rx += (mx - rx) * 0.13;
+      ry += (my - ry) * 0.13;
+      curR.style.left = rx + 'px';
+      curR.style.top  = ry + 'px';
+      requestAnimationFrame(tick);
+    })();
+
+    document.querySelectorAll('a, .card, .section-header, .sidenav-dot').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        curR.style.width  = '52px';
+        curR.style.height = '52px';
+        curR.style.borderColor = 'var(--gold)';
+      });
+      el.addEventListener('mouseleave', () => {
+        curR.style.width  = '30px';
+        curR.style.height = '30px';
+        curR.style.borderColor = 'var(--gold-dim)';
+      });
+    });
+
+    /* ── Section Toggle ── */
+    function openSection(section) {
+      const wrap  = section.querySelector('.cards-wrap');
+      const hdr   = section.querySelector('.section-header');
+      section.classList.add('open');
+      hdr.setAttribute('aria-expanded', 'true');
+
+      // Animate cards in with stagger
+      const cards = wrap.querySelectorAll('.card');
+      cards.forEach((c, i) => setTimeout(() => c.classList.add('in'), i * 70));
+
+      // Set initial px height then let it breathe
+      wrap.style.maxHeight = wrap.scrollHeight + 'px';
+      setTimeout(() => {
+        if (section.classList.contains('open')) wrap.style.maxHeight = 'none';
+      }, 700);
+    }
+
+    function closeSection(section) {
+      const wrap = section.querySelector('.cards-wrap');
+      const hdr  = section.querySelector('.section-header');
+      section.classList.remove('open');
+      hdr.setAttribute('aria-expanded', 'false');
+      wrap.style.maxHeight = wrap.scrollHeight + 'px';
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        wrap.style.maxHeight = '0';
+      }));
+    }
+
+    document.querySelectorAll('.section-header').forEach(hdr => {
+      const activate = () => {
+        const section = hdr.closest('.cv-section');
+        section.classList.contains('open') ? closeSection(section) : openSection(section);
+      };
+      hdr.addEventListener('click', activate);
+      hdr.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); } });
+    });
+
+    /* ── Card Toggle ── */
+    function toggleCard(card) {
+      const body = card.querySelector('.card-body');
+      const isOpen = card.classList.contains('open');
+      card.classList.toggle('open');
+      body.style.maxHeight = isOpen ? '0' : body.scrollHeight + 'px';
+
+      // After card expands, allow further growth
+      if (!isOpen) {
+        setTimeout(() => {
+          if (card.classList.contains('open')) body.style.maxHeight = 'none';
+        }, 550);
+      }
+    }
+
+    document.querySelectorAll('.card').forEach(card => {
+      const activate = () => toggleCard(card);
+      card.addEventListener('click', activate);
+      card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); } });
+    });
+
+    /* ── Scroll Reveal ── */
+    const ro = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+    /* ── Side Nav Highlight ── */
+    const navDots = document.querySelectorAll('.sidenav-dot');
+    const sectIds = ['hero','summary','sec-exp','sec-proj','sec-edu','sec-skl','sec-trn'];
+
+    const sno = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const id = e.target.id;
+          navDots.forEach(d => d.classList.toggle('active', d.dataset.target === id));
+        }
+      });
+    }, { threshold: 0.3 });
+
+    sectIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) sno.observe(el);
+    });
+
+    navDots.forEach(d => {
+      d.addEventListener('click', () => {
+        const t = document.getElementById(d.dataset.target);
+        if (t) t.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    /* ── Auto-open first section on load ── */
+    // (Optional: uncomment to auto-open Experience)
+    // setTimeout(() => openSection(document.getElementById('sec-exp')), 1800);
+
+  })();
+  </script>
+
+</body>
+</html>

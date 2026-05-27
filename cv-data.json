@@ -1,0 +1,312 @@
+{
+  "_instructions": "Edit this file to update your CV. Use [em]text[/em] for gold italic emphasis in long-text fields (summary, bullets). Use plain text everywhere else. Ampersands and dashes can be written as-is.",
+  "meta": {
+    "pageTitle": "Yassir Taher",
+    "footerNote": "Built for impact · 2025"
+  },
+  "hero": {
+    "firstName": "Yassir",
+    "lastName": "Taher",
+    "label": "Structural Integrity · Oil & Gas · Offshore · Energy Transition",
+    "title": "Principal Structural Integrity Engineer & ECA Lead · Saipem",
+    "contact": [
+      { "label": "yassir.taher@outlook.com", "href": "mailto:yassir.taher@outlook.com" },
+      { "label": "(+33) 617 16 90 92",        "href": "tel:+33617169092" },
+      { "label": "linkedin.com/in/taheryassir","href": "https://linkedin.com/in/taheryassir", "external": true }
+    ]
+  },
+  "summary": "Six years shaping the structural integrity of the world's most critical energy infrastructure — from deepwater pipelines off the coast of Angola to pre-salt FPSO systems in Brazil. A technical leader who [em]bridges rigorous engineering with strategic business impact[/em], driving cost reduction, operational reliability, and long-term client partnerships across four continents.",
+  "sections": [
+    {
+      "id": "sec-exp",
+      "num": "01",
+      "title": "Experience",
+      "type": "cards",
+      "cards": [
+        {
+          "role": "Principal Structural Integrity Engineer · ECA Lead",
+          "org": "Saipem",
+          "date": "Sep 2018 — Present",
+          "location": "Montigny-Le-Bretonneux, France",
+          "summary": "Leading high-stakes Engineering Critical Assessments across deepwater infrastructure for Shell, ENI, Petrobras, ExxonMobil and TotalEnergies — across four continents.",
+          "bullets": [
+            "Lead and manage ECA project teams and resources, ensuring technical excellence and deadline compliance across concurrent projects.",
+            "Develop innovative calculation methodologies grounded in industry standards (BS7910, DNV) and state-of-the-art fracture mechanics research.",
+            "Define optimal weld acceptance criteria by balancing installation constraints with structural reliability — directly reducing repair rates offshore.",
+            "Collaborate with senior executives and client representatives to align engineering solutions with strategic project objectives.",
+            "Drive significant financial savings by minimising mechanical testing requirements through intelligent, evidence-based acceptance criteria design.",
+            "Enhance team productivity through process automation (Python), workflow optimisation and custom internal tooling."
+          ],
+          "impacts": [
+            { "label": "Operational Impact",   "value": "Reduced offshore repair rates & enhanced structural reliability" },
+            { "label": "Cost Reduction",        "value": "Minimised testing & repair costs through smart acceptance criteria" },
+            { "label": "Client Partnerships",   "value": "Long-term relationships with Petrobras, ENI, Shell, ExxonMobil" }
+          ],
+          "tags": ["ECA", "Fracture Mechanics", "Pipeline Integrity", "Technical Leadership", "Python Automation", "Client Management"]
+        },
+        {
+          "role": "Installation Methods Engineer — Offshore Assignment",
+          "org": "Saipem · FDS Installation Vessel",
+          "date": "Jul — Aug 2023",
+          "location": "Brazil (Offshore)",
+          "summary": "Deployed offshore on one of the world's largest pipelaying vessels during the Buzios 5 campaign — bridging engineering theory with live installation operations at sea.",
+          "bullets": [
+            "Oversaw the implementation of methods for pipelaying, subsea structures, and equipment installation during active offshore operations.",
+            "Worked alongside vessel engineers, technicians, and Petrobras representatives to ensure procedural alignment.",
+            "Provided safe, efficient, and cost-effective engineering solutions in response to unexpected operational events.",
+            "Delivered real-time technical troubleshooting and site query support."
+          ],
+          "impacts": null,
+          "tags": ["Offshore Operations", "Pipelaying", "Subsea Installation", "Crisis Resolution"]
+        },
+        {
+          "role": "Structural Integrity Engineer — Research Intern",
+          "org": "Saipem",
+          "date": "Mar — Aug 2018",
+          "location": "France",
+          "summary": "Master's thesis project: pioneering a constitutive model identification methodology for FE-based fracture mechanics assessments of carbon steel pipelines.",
+          "bullets": [
+            "Identified material constitutive models for FE-based fracture mechanics assessments of API X65 carbon steel.",
+            "Comparative analysis of numerical optimisation methods and material models.",
+            "Developed Abaqus models using Python scripting for automated tensile test simulation.",
+            "Applied the model to SEN(T) specimens — directly feeding into production ECA workflows used today."
+          ],
+          "impacts": null,
+          "tags": ["FEA / Abaqus", "Python", "Material Science", "Research"]
+        }
+      ]
+    },
+    {
+      "id": "sec-proj",
+      "num": "02",
+      "title": "Projects",
+      "type": "cards",
+      "cards": [
+        {
+          "role": "Structural Integrity Lead",
+          "org": "Bonga North · Shell · Nigeria",
+          "date": "Oct 2024 — Present",
+          "location": null,
+          "summary": "Leading structural integrity scope for Shell's Bonga North deepwater development — one of the most technically complex FPSO tiebacks in West Africa, in water depths exceeding 1,000m.",
+          "bullets": null,
+          "impacts": null,
+          "tags": ["Shell", "FPSO Tieback", "West Africa", "Deepwater"]
+        },
+        {
+          "role": "Structural Integrity Lead",
+          "org": "Agogo Full Field Development · ENI · Angola",
+          "date": "Sep 2023 — Present",
+          "location": null,
+          "summary": "Full-field development scope for ENI Angola — defining structural integrity strategy across all pipeline and riser systems for one of Angola's major deepwater developments.",
+          "bullets": null,
+          "impacts": null,
+          "tags": ["ENI", "Angola", "Full Field Dev.", "Risers & Pipelines"]
+        },
+        {
+          "role": "Structural Integrity Lead",
+          "org": "Recif Project · ADEME · France",
+          "date": "Nov 2022 — Present",
+          "location": null,
+          "summary": "French energy transition project under ADEME — applying offshore structural integrity expertise to new energy infrastructure, directly supporting France's renewable energy strategy.",
+          "bullets": null,
+          "impacts": null,
+          "tags": ["ADEME", "Energy Transition", "France", "Renewables"]
+        },
+        {
+          "role": "Structural Integrity Lead",
+          "org": "Buzios 7 · Petrobras · Brazil",
+          "date": "May 2022 — Present",
+          "location": null,
+          "summary": "Structural integrity leadership for Petrobras' Buzios 7 FPSO — continuing a multi-year partnership in the world's largest deepwater pre-salt field, operating at depths beyond 2,000m.",
+          "bullets": null,
+          "impacts": null,
+          "tags": ["Petrobras", "Pre-salt", "Brazil", "Ultra-deepwater"]
+        },
+        {
+          "role": "Structural Integrity Lead",
+          "org": "Buzios 5 · Petrobras · Brazil",
+          "date": "Sep 2020 — Nov 2023",
+          "location": null,
+          "summary": "Three-year structural integrity leadership on the Buzios 5 FPSO project — from initial engineering through to offshore installation, culminating in the 2023 vessel deployment on the FDS.",
+          "bullets": null,
+          "impacts": null,
+          "tags": ["Petrobras", "FPSO", "Pre-salt", "Multi-year"]
+        },
+        {
+          "role": "Structural Integrity Engineer",
+          "org": "ALEN · Noble Energy · Equatorial Guinea",
+          "date": "Sep 2019 — Sep 2020",
+          "location": null,
+          "summary": "Structural integrity contributions to Noble Energy's ALEN project off Equatorial Guinea, alongside a parallel technical investigation into subsea pipeline integrity for TotalEnergies' Kaombo development in Angola.",
+          "bullets": null,
+          "impacts": null,
+          "tags": ["Noble Energy", "TotalEnergies", "West Africa", "Investigation"]
+        },
+        {
+          "role": "Structural Integrity Engineer",
+          "org": "Liza Phase 1 · ExxonMobil · Guyana",
+          "date": "Jan — Sep 2019",
+          "location": null,
+          "summary": "Structural integrity engineering for ExxonMobil's landmark Liza Phase 1 — the first major deepwater oil development in Guyana, opening a new deepwater province for a country.",
+          "bullets": null,
+          "impacts": null,
+          "tags": ["ExxonMobil", "Guyana", "Deepwater", "FPSO"]
+        },
+        {
+          "role": "Structural Integrity Engineer",
+          "org": "FEEDs & Bids · TotalEnergies, Petrobras, BP",
+          "date": "Jan 2021 — Dec 2022",
+          "location": null,
+          "summary": "Contributed to multiple Front-End Engineering Design studies and bid proposals for major operators, developing structural integrity strategies at the earliest project phases.",
+          "bullets": null,
+          "impacts": null,
+          "tags": ["TotalEnergies", "Petrobras", "BP", "FEED", "Bid Support"]
+        }
+      ]
+    },
+    {
+      "id": "sec-edu",
+      "num": "03",
+      "title": "Education",
+      "type": "cards",
+      "cards": [
+        {
+          "role": "Master of Research — Mechanics, Materials, Structures & Processes",
+          "org": "Arts et Métiers Institute of Technology",
+          "date": "Graduated 2018",
+          "location": "Metz, France",
+          "summary": "Research master's degree at one of France's most prestigious engineering institutions, with a thesis directly applied to industrial pipeline integrity.",
+          "bullets": [
+            "Thesis: Identification of carbon steel constitutive behavior for applications in fracture mechanics.",
+            "Coursework: Fracture, Fatigue, Non-linear mechanics, Finite Elements, Composites, Thermomechanics, Multiscale mechanics, Continuum damage mechanics."
+          ],
+          "impacts": null,
+          "tags": ["Grande École", "Research", "Fracture Mechanics"]
+        },
+        {
+          "role": "Engineering Degree — Mechanical Engineering",
+          "org": "École Nationale Supérieure d'Arts et Métiers",
+          "date": "Graduated 2018",
+          "location": "Meknès, Morocco",
+          "summary": "French grande école engineering degree in mechanical engineering — the dual French-Moroccan ENSAM system, equivalent to a top-tier European engineering MSc.",
+          "bullets": [
+            "Coursework: Machine elements design, CAD (CATIA, AutoCAD), Fabrication processes, Finite Elements, Mechanical design, Maintenance engineering."
+          ],
+          "impacts": null,
+          "tags": ["Grande École", "Mechanical Engineering", "CAD & FEA"]
+        }
+      ]
+    },
+    {
+      "id": "sec-skl",
+      "num": "04",
+      "title": "Skills",
+      "type": "skills",
+      "groups": [
+        {
+          "label": "Core Engineering Expertise",
+          "pills": [
+            "Engineering Critical Assessment",
+            "Fracture Mechanics & Fatigue",
+            "Welding & NDT",
+            "Materials Engineering",
+            "Mechanical Design",
+            "FE Modelling (Abaqus)",
+            "Hydrogen & CO₂ Transport",
+            "Carbon Capture & Storage",
+            "Offshore Installation",
+            "Subsea Production Systems",
+            "Statistics & Reliability Engineering",
+            "Numerical Optimisation",
+            "Project Management",
+            "Technical Writing"
+          ]
+        },
+        {
+          "label": "Business & Strategy",
+          "pills": [
+            "Accounting & Finance",
+            "Strategic Management",
+            "Mergers & Acquisitions",
+            "Marketing",
+            "Data-Driven Decision Making",
+            "Oil & Gas Markets",
+            "Energy Transition Modelling"
+          ]
+        },
+        {
+          "label": "Data & Technology",
+          "pills": [
+            "Python",
+            "JavaScript",
+            "C / MATLAB",
+            "Linux Shell",
+            "Machine Learning & AI",
+            "Data Visualisation",
+            "Django / Vue.js",
+            "CPU / GPU Parallelisation",
+            "Version Control",
+            "Power BI"
+          ]
+        }
+      ],
+      "languages": [
+        { "name": "French",  "level": "Bilingual" },
+        { "name": "Arabic",  "level": "Bilingual" },
+        { "name": "English", "level": "Fluent"    }
+      ]
+    },
+    {
+      "id": "sec-trn",
+      "num": "05",
+      "title": "Training & Certifications",
+      "type": "cards",
+      "cards": [
+        {
+          "role": "Business Studies — Self-directed Curriculum",
+          "org": "Coursera · Multiple Institutions",
+          "date": "Ongoing",
+          "location": null,
+          "summary": "A structured, intentional programme bridging deep engineering expertise with executive-level business acumen — laying the foundation for an MBA and a broader leadership role.",
+          "bullets": [
+            "Oil & Gas Industry Operations and Markets",
+            "Modelling and Measuring the Energy Transition",
+            "Business Foundations Specialisation",
+            "Strategic Management",
+            "Financial Management Specialisation",
+            "Mergers and Acquisitions",
+            "Climate Change: Carbon Capture and Storage"
+          ],
+          "impacts": null,
+          "tags": ["Business", "Finance", "Strategy", "M&A", "Energy Transition"]
+        },
+        {
+          "role": "BOSIET — Basic Offshore Safety Induction & Emergency Training",
+          "org": "OPITO · FMTC",
+          "date": "May 2023",
+          "location": "Dunkirk, France",
+          "summary": "Industry-standard offshore safety certification — prerequisite for working on offshore installations and vessels worldwide.",
+          "bullets": [
+            "Sea survival & raft deployment",
+            "Helicopter underwater escape (HUET)",
+            "First aid & emergency response",
+            "Firefighting & smoke environments",
+            "Compressed Air Emergency Breathing Systems (CA-EBS)"
+          ],
+          "impacts": null,
+          "tags": ["OPITO", "Offshore Certified", "Safety"]
+        },
+        {
+          "role": "Noesis Optimus Software Training",
+          "org": "NOESIS · AccSimia",
+          "date": "June 2018",
+          "location": "Montigny-le-Bretonneux, France",
+          "summary": "Specialist training in Noesis Optimus — a professional optimisation software used for numerical design-of-experiment and process integration in engineering simulations.",
+          "bullets": null,
+          "impacts": null,
+          "tags": ["Optimisation", "Software", "Simulation"]
+        }
+      ]
+    }
+  ]
+}
