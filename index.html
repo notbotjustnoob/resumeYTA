@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
   <script>
     (function(){
       var s = localStorage.getItem('cv-theme');
-      var p = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      var p = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       document.documentElement.setAttribute('data-theme', s || p);
     })();
   </script>
@@ -25,13 +25,13 @@
   --bg:        #0b0a08;
   --surface:   #151310;
   --surface2:  #1c1a15;
-  --border:    #242118;
+  --border:    #2e2b22;
   --gold:      #C89B3C;
-  --gold-d:    #7a5d22;
+  --gold-d:    #9a7530;
   --gold-glow: rgba(200,155,60,.06);
   --cream:     #EAE5D9;
-  --muted:     #54524b;
-  --text:      #AEAAA3;
+  --muted:     #8a8880;
+  --text:      #C4C0B8;
 }
 :root[data-theme="light"] {
   --bg:        #F2EDE3;
@@ -614,7 +614,7 @@ footer {
     <div class="hero-deco">
       <div class="deco-stat">
         <div class="deco-cell">
-          <div class="deco-num">6<em>+</em></div>
+          <div class="deco-num">8<em>+</em></div>
           <div class="deco-lbl">Years Experience</div>
         </div>
         <div class="deco-cell">
