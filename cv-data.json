@@ -2,7 +2,7 @@
   "_instructions": "Edit this file to update your CV. Use [em]text[/em] for gold italic emphasis in long-text fields (summary, bullets). Use plain text everywhere else. Ampersands and dashes can be written as-is.",
   "meta": {
     "pageTitle": "Yassir Taher",
-    "footerNote": "Built for impact · 2025"
+    "footerNote": "Built for impact · 2026"
   },
   "hero": {
     "firstName": "Yassir",
@@ -15,7 +15,7 @@
       { "label": "linkedin.com/in/taheryassir","href": "https://linkedin.com/in/taheryassir", "external": true }
     ]
   },
-  "summary": "Six years shaping the structural integrity of the world's most critical energy infrastructure — from deepwater pipelines off the coast of Angola to pre-salt FPSO systems in Brazil. A technical leader who [em]bridges rigorous engineering with strategic business impact[/em], driving cost reduction, operational reliability, and long-term client partnerships across four continents.",
+  "summary": "Eight years shaping the structural integrity of the world's most critical energy infrastructure — from deepwater pipelines off the coast of Angola to pre-salt FPSO systems in Brazil. A technical leader who [em]bridges rigorous engineering with strategic business impact[/em], driving cost reduction, operational reliability, and long-term client partnerships across four continents.",
   "sections": [
     {
       "id": "sec-exp",
@@ -262,6 +262,19 @@
       "title": "Training & Certifications",
       "type": "cards",
       "cards": [
+        {
+          "role": "CFA Level 1 — Chartered Financial Analyst",
+          "org": "CFA Institute",
+          "date": "Exam: Feb / May 2027",
+          "location": null,
+          "summary": "Currently enrolled in the CFA Level 1 programme — one of the most rigorous credentials in global finance, reinforcing the analytical and financial acumen required for executive leadership at the intersection of engineering and business.",
+          "bullets": [
+            "Enrolled and actively preparing for the CFA Level 1 examination (February / May 2027 sitting).",
+            "Curriculum: Ethical & Professional Standards, Quantitative Methods, Economics, Financial Reporting & Analysis, Corporate Finance, Equity Investments, Fixed Income, Derivatives, Alternative Investments, Portfolio Management & Wealth Planning."
+          ],
+          "impacts": null,
+          "tags": ["CFA Institute", "In Progress", "Finance", "Investment Analysis", "Portfolio Management"]
+        },
         {
           "role": "Business Studies — Self-directed Curriculum",
           "org": "Coursera · Multiple Institutions",
